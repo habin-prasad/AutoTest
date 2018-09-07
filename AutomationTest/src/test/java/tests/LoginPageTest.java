@@ -28,7 +28,7 @@ public class LoginPageTest {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.get(baseUrl);
         loginPage = new loginPage(driver);
-        this.driver = loginPage.login("moeautouser@gmail.com", "dosalike1!");
+        this.driver = loginPage.login("", "");
     }
 
     @Test(priority = 1)
