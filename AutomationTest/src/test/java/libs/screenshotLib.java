@@ -10,18 +10,22 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 
-public class screenshotLib {
+public class ScreenshotLib {
     WebDriver driver;
 
-    public screenshotLib(WebDriver driver) {
+    public ScreenshotLib(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void takeScreenshot(String fileName) throws IOException {
-        String directoryName = System.getProperty("user.dir") + "screenshots";
+    public void takeScreenshot(String fileName) {
+        String directoryName = System.getProperty("user.dir") + "/screenshots/";
         Date date = new Date();
 
         File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(source, new File(directoryName + fileName + date.getTime() + ".png"));
+        try {
+            FileUtils.copyFile(source, new File(directoryName + fileName + date.getTime() + ".png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

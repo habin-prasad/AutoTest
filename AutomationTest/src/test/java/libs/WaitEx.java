@@ -24,4 +24,24 @@ public class WaitEx {
         }
     }
 
+    public void waitForElement(By locator,int timeout){
+        WebElement element = null;
+        try {
+            WebDriverWait wait = new WebDriverWait(driver,timeout);
+            element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+//    public void waitToBeClickable(By locator,int timeout){
+//        WebElement element = null;
+//        try {
+//            WebDriverWait wait = new WebDriverWait(driver,timeout);
+//            element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+//        }catch (Exception e){
+//            System.out.println(e.getMessage());
+//        }
+//    }
+
 }

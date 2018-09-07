@@ -6,8 +6,9 @@ public class Checks {
         Date date = new Date();
 //        System.out.println(date.getTime());
 //        System.out.println(System.getProperty("user.dir") + "TEst");
-//        String[] test = String.valueOf(LocalTime.now()).split(":");
+        String[] test = String.valueOf(LocalTime.now()).split(":");
 //        System.out.println(test[1]);
+        System.out.printf(String.valueOf(Integer.parseInt(test[0])-12));
 
     }
 }

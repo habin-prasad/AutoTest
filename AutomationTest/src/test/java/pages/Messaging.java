@@ -1,7 +1,12 @@
 package pages;
 
+import libs.BaseClass;
+import libs.MouseActivity;
+import libs.ScreenshotLib;
+import libs.WaitEx;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,10 +15,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class Messaging {
+public class Messaging extends BaseClass {
     WebDriver driver;
-    JavascriptExecutor jse;
     Logger logger = LogManager.getLogger(Messaging.class.getName());
+
+
 
     @FindBy(css = ".pushForm .pushDiv:nth-child(3) [tooltip]")
     private WebElement messageArea;
@@ -91,50 +97,67 @@ public class Messaging {
     public Messaging(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver,this);
+        waitEx = new WaitEx(driver);
+        mouseActivity = new MouseActivity(driver);
+        jse = (JavascriptExecutor) driver;
     }
 
-    public WebDriver enterMessagingDetails() throws InterruptedException {
-        messageArea.sendKeys("@Name");
-        Thread.sleep(2000);
-        Actions actions = new Actions(driver);
-        actions.moveToElement(suggestion).click().perform();
-//        actions.moveToElement(toggleButton).click().perform();
-        toggleButton.click();
-        fallbackMessageTitle.sendKeys("Testing");
-        fallbackMessageArea.sendKeys("TEsting");
-        richContent.click();
-        Select select = new Select(select1);
-        select.selectByVisibleText("Coupon");
-        couponText.sendKeys("Testinf");
-        addAnotherButton.click();
-        Select select3 = new Select(select2);
-        select3.selectByVisibleText("Image");
-        imageText.sendKeys("Testing");
-        jse = (JavascriptExecutor) driver;
+    public WebDriver enterMessagingDetails() {
+        enterMessageTitle("Name");
+        enterFallback("TitleTesting","Test Message","COUPON1","wertyu");
         jse.executeScript("window.scrollBy(0,-500)");
+       actionsTab();
+        String[] keys = {"1","2","3"};
+        String[] values = {"4","5","6"};
+        actionsKeys(keys,values);
+        screenshot=new ScreenshotLib(driver);
+        screenshot.takeScreenshot("Messaging");
+        nextButton.click();
+        return driver;
+    }
 
-        actions.moveToElement(actionButton).click().perform();
-        Select select4 = new Select(actionSelect);
-        select4.selectByVisibleText("Navigate to a screen");
-        actions.moveToElement(screenName).click().perform();
-        Thread.sleep(1000);
-//        jse = (JavascriptExecutor) driver;
-//        jse.executeScript("window.scrollBy(0,50)");
-        actions.moveToElement(screenSelect).click().perform();
-        Select select5 = new Select(actionSelect);
-        select5.selectByVisibleText("Navigate to screen");
-        actions.moveToElement(screenName).click().perform();
-        actions.moveToElement(screenSelect).click().perform();
+    private void enterMessageTitle(String title){
+        messageArea.sendKeys("@"+title);
+        mouseActivity.perfomClick(suggestion);
+    }
+
+    private void enterFallback(String title,String text, String coup,String url){
+        toggleButton.click();
+        fallbackMessageTitle.sendKeys(title);
+        fallbackMessageArea.sendKeys(text);
+        richContent.click();
+        mouseActivity.selectElementByText(select1,"Coupon");
+        couponText.sendKeys(coup);
+        addAnotherButton.click();
+        mouseActivity.selectElementByText(select2,"Image");
+        imageText.sendKeys(url);
+
+    }
+
+    private void actionsTab(){
+        waitEx.waitElement(By.xpath("//label[contains(.,'Actions')]/../..//md-tab-item[3]"),4);
+        mouseActivity.perfomClick(actionButton);
+        mouseActivity.selectElementByText(actionSelect,"Navigate to a screen");
+        mouseActivity.perfomClick(screenName);
+        waitEx.waitElement(By.cssSelector(".push-dropdown [data-option-array-index='2']"),4);
+        mouseActivity.perfomClick(screenSelect);
+    }
+
+    private void actionsKeys(String[] key,String[] value){
+        key1.clear();
+        value1.clear();
         key1.sendKeys("key1");
         value1.sendKeys("value1");
         addButton2.click();
+        key2.clear();
+        value2.clear();
         key2.sendKeys("key2");
         value2.sendKeys("value2");
         addButton2.click();
+        key3.clear();
+        value3.clear();
         key3.sendKeys("key3");
         value3.sendKeys("value3");
-        nextButton.click();
-        return driver;
     }
 
 

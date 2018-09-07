@@ -1,5 +1,9 @@
 package pages;
 
+import libs.BaseClass;
+import libs.MouseActivity;
+import libs.ScreenshotLib;
+import libs.WaitEx;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -12,10 +16,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 
-public class Segmentation {
+public class Segmentation extends BaseClass {
     WebDriver driver;
-    JavascriptExecutor jse;
+
     Logger logger = LogManager.getLogger(Segmentation.class.getName());
+    ScreenshotLib screenshot;
+//    WaitEx waitEx;
 
 
     @FindBy(css = "[ng-change='checkIfValid\\(\\)']")
@@ -78,47 +84,71 @@ public class Segmentation {
     public Segmentation(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
-
+        waitEx = new WaitEx(driver);
+        mouseActivity = new MouseActivity(driver);
+        screenshot = new ScreenshotLib(driver);
 
     }
 
-    public WebDriver enterSegmentationDetails() throws Exception {
-        campaignName.sendKeys("Test22");
+    public WebDriver enterSegmentationDetails(){
+        enterCampaignName("Tesla");
         Actions action = new Actions(driver);
-        action.moveToElement(android).click().perform();
-        action.moveToElement(customersSatisfy).click().perform();
+        clickPlatform("android");
+        targetAudience("customers");
         jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,600)");
-        action.moveToElement(selectActions).click().perform();
-        WebElement test = driver.findElement(By.cssSelector("[data-option-array-index='9']"));
-        Thread.sleep(2000);
-        action.moveToElement(selection).click().perform();
-        Select dropDown = new Select(repeatsSelection);
-        dropDown.selectByVisibleText("at most");
-        count.sendKeys("2");
-        Select dropDown2 = new Select(timeFrame);
-        dropDown2.selectByVisibleText("after");
-        action.moveToElement(days).click().perform();
-        action.moveToElement(heading).click().perform();
-        action.moveToElement(heading).click().perform();
-        action.moveToElement(year).click().perform();
-        action.moveToElement(month).click().perform();
-        action.moveToElement(date).click().perform();
-//        days.sendKeys("14-March-2019");
-        Thread.sleep(2000);
-        addAttributeButton.click();
-//        Thread.sleep(4000);
-//        addAttributeButton.click();
-        action.moveToElement(attributeList).click().perform();
-        action.moveToElement(attributeList).click().perform();
-        Thread.sleep(2000);
-        action.moveToElement(attributeList).click().perform();
-        Thread.sleep(2000);
-        action.moveToElement(platform).click().perform();
-        Select dropDown3 = new Select(select3);
-        dropDown3.selectByVisibleText("starts with");
-        text3.sendKeys("and");
+        selectActionsCustomers("AUTO_TEST_Searched");
+        iterationsCalc("at most");
+        datePicker();
+        addAttribute();
         nextButton.click();
+        screenshot.takeScreenshot("Segmentation");
         return driver;
+    }
+
+    private void enterCampaignName(String name){
+        waitEx.waitElement(By.cssSelector("[ng-change='checkIfValid\\(\\)']"),4);
+        campaignName.sendKeys(name);
+    }
+
+    private void clickPlatform(String platformName){
+        mouseActivity.perfomClick(android);
+    }
+
+    private void targetAudience(String type){
+        mouseActivity.perfomClick(customersSatisfy);
+    }
+
+    private void selectActionsCustomers(String action){
+        mouseActivity.perfomClick(selectActions);
+        waitEx.waitElement(By.cssSelector("[data-option-array-index='9']"),4);
+        mouseActivity.perfomClick(selection);
+    }
+
+    private void iterationsCalc(String repetitions){
+        mouseActivity.selectElementByText(repeatsSelection,repetitions);
+        count.clear();
+        count.sendKeys("2");
+    }
+    private void datePicker(){
+        mouseActivity.selectElementByText(timeFrame,"after");
+        mouseActivity.perfomClick(days);
+        mouseActivity.perfomClick(heading);
+        mouseActivity.perfomClick(heading);
+        mouseActivity.perfomClick(year);
+        mouseActivity.perfomClick(month);
+        mouseActivity.perfomClick(date);
+    }
+
+    private void addAttribute(){
+        waitEx.waitForElement(By.xpath(".//button[contains(.,'Add attribute')]"),10);
+        addAttributeButton.click();
+        addAttributeButton.click();
+        mouseActivity.perfomClick(attributeList);
+        waitEx.waitElement(By.xpath("//ul[@class='chosen-results']/li[.='Platform']"),10);
+        mouseActivity.perfomClick(platform);
+        mouseActivity.selectElementByText(select3,"starts with");
+        text3.sendKeys("and");
+
     }
 }

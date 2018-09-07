@@ -1,0 +1,10 @@
+tests/LoginPageTest.class
+libs/ExcelUtility.class
+libs/WaitEx.class
+libs/MouseActivity.class
+pages/Messaging.class
+pages/GettingStarted.class
+libs/ScreenshotLib.class
+pages/Segmentation.class
+pages/Scheduling.class
+pages/loginPage.class
