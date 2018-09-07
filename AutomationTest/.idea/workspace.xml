@@ -54,8 +54,8 @@
       <file leaf-file-name="LoginPageTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/LoginPageTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="72" column="22" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
+            <state relative-caret-position="320">
+              <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,50 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScreenshotLib.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/libs/ScreenshotLib.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="20" column="78" selection-start-line="20" selection-start-column="78" selection-end-line="20" selection-end-column="78" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessagingTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/tests/MessagingTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Segmentation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/pages/Segmentation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="150" column="30" lean-forward="true" selection-start-line="150" selection-start-column="30" selection-end-line="150" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SchedulingTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/tests/SchedulingTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Messaging.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pages/Messaging.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+              <caret line="72" selection-start-line="72" selection-end-line="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -142,8 +103,8 @@
       <file leaf-file-name="Scheduling.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pages/Scheduling.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="480">
+              <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -155,7 +116,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Checks.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+              <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -512,9 +473,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LoginPageTest - 2018.09.07 at 15h 23m 11s.xml">
-      <configuration name="LoginPageTest" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="LoginPageTest - 2018.09.07 at 16h 12m 50s.xml">
       <configuration name="LoginPageTest" configurationId="TestNG" />
     </history-entry>
@@ -542,10 +500,12 @@
     <history-entry file="LoginPageTest - 2018.09.07 at 17h 43m 45s.xml">
       <configuration name="LoginPageTest" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="LoginPageTest - 2018.09.07 at 17h 45m 52s.xml">
+      <configuration name="LoginPageTest" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
@@ -568,9 +528,9 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36714286" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36714286" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
       <window_info anchor="bottom" id="SonarLint" order="7" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -598,23 +558,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/pages/Messaging.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2010">
-          <caret line="145" column="25" selection-start-line="145" selection-start-column="25" selection-end-line="145" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/libs/ScreenshotLib.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="20" column="78" selection-start-line="20" selection-start-column="78" selection-end-line="20" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pages/Scheduling.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
@@ -937,7 +880,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Checks.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -948,20 +891,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pages/Scheduling.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pages/Messaging.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -982,7 +915,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/pages/Segmentation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
-          <caret line="150" column="30" lean-forward="true" selection-start-line="150" selection-start-column="30" selection-end-line="150" selection-end-column="30" />
+          <caret line="150" column="30" selection-start-line="150" selection-start-column="30" selection-end-line="150" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -999,10 +932,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/screenshots/Scheduling1536322548071.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screenshots/Messaging1536322523923.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/Scheduling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/LoginPageTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="72" column="22" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
+        <state relative-caret-position="320">
+          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
