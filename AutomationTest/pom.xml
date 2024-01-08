@@ -14,7 +14,7 @@
         <logger.version>2.10.0</logger.version>
         <surefire.version>2.22.0</surefire.version>
         <log4j.version>2.11.1</log4j.version>
-        <poi.version>3.17</poi.version>
+        <poi.version>4.1.1</poi.version>
     </properties>
     <build>
         <plugins>
