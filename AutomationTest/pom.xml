@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
     <properties>
         <selenium.version>3.7.1</selenium.version>
-        <testng.version>6.13.1</testng.version>
+        <testng.version>7.5.1</testng.version>
         <logger.version>2.10.0</logger.version>
         <surefire.version>2.22.0</surefire.version>
         <log4j.version>2.11.1</log4j.version>
